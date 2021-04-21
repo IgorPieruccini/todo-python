@@ -1,9 +1,10 @@
 import sys
 import uuid
 import json
-from PySide6 import QtWidgets
+from PySide6 import QtWidgets, QtCore
 from task import Task
 from utils import debounce
+from stylesheet import stylesheet
 
 STORAGE_PATH = 'storage.json'
 
@@ -65,6 +66,7 @@ def load_storage():
 
 if __name__ == "__main__":
     app = QtWidgets.QApplication([])
+    app.setStyleSheet(stylesheet)
     widget = Main()
     widget.resize(800, 600)
     widget.show()
